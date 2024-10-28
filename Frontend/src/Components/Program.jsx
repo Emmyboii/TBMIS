@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 import Back from '../Images/Screenshot.png';
 import Back2 from '../Images/graduate.jpg';
 import ABD from '../Images/EAD1.jpg';
-import MiniMBA from '../Images/MBA.jpg';
 import MBA from '../Images/MBA2.jpg';
 import EDP from '../Images/ED2.JPG';
 import PC from '../Images/PC.jpg';
@@ -534,7 +533,7 @@ const Program = () => {
         </div>
 
         <div className='md:mx-[20%] sv:mx-[15%] mx-[12%] hover:scale-105 duration-500 text-white bg-blue-900 text-[17.5px] my-[70px] ma:text-[19px]'>
-          <img src={MiniMBA} alt="" className='h-[40vh] w-full object-cover' />
+          <img src={MBA} alt="" className='h-[40vh] w-full object-cover' />
           <div className='shadow-2xl shadow-black/60 mp:px-[40px] sb:px-[20px] px-[10px] pt-[20px] pb-[30px]'>
             <div>
               <h1 className='text-[22px] text-center sb:text-[24px] se:text-[28px] sy:text-[34px] ma:text-[40px] text-orange-500 font-bold'>

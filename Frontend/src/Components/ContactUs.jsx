@@ -15,19 +15,19 @@ const ContactUs = () => {
                     <h1 className='text-[20px] se:text-[23px] sm:text-[25px] ms:text-[20px] ms:mr-[50px] pt-5 text-center ms:text-start flex justify-center ms:justify-normal'>Wish to Inquire about admission, syllabus or anything else?</h1>
                     <p className='text-[24px] se:text-[26px] sm:text-[26.6px] ms:text-[30px] font-bold text-center ms:text-start mt-4 se:mt-3'>Call us or send us a mail</p><br />
                     <div className='ms:block hidden'>
-                        <a href='tel: +2439012104873' rel='noreferrer' target='_blank'>
+                        <a href='tel: +2349134942707' rel='noreferrer' target='_blank'>
                             <div className='flex gap-3 items-center mt-3 hover:scale-95 text-[20px] font-semibold duration-500 mr-[220px]'>
                                 <FaPhoneVolume className='text-[27px]' />
                                 +234 913 494 2707
                             </div>
                         </a>
-                        <a href='mailto:tmbi@mail.ee' rel='noreferrer' target='_blank'>
+                        <a href='mailto:info@thronebusinessinstituteswitzerland.com' rel='noreferrer' target='_blank'>
                             <div className='hover:scale-95 duration-500 ms:hidden text-[20px] gap-3 font-semibold flex items-center mt-10 mr-[220px]'>
                                 <MdOutlineEmail className='text-[27px]' />
                                 info@thronebusinessinstitute.com
                             </div>
                         </a>
-                        <a href='mailto:tmbi@mail.ee' rel='noreferrer' target='_blank'>
+                        <a href='mailto:info@thronebusinessinstituteswitzerland.com' rel='noreferrer' target='_blank'>
                             <div className='hover:scale-95 duration-500 ms:flex hidden text-[20px] gap-3 font-semibold items-center mt-10 mr-[220px]'>
                                 <MdOutlineEmail className='text-[27px]' />
                                 info@thronebusinessinstituteswitzerland.com
@@ -41,13 +41,13 @@ const ContactUs = () => {
                         </a>
                     </div>
                     <div className='mr:grid mr:grid-cols-2 mr:mx-12 ms:hidden'>
-                        <a href='tel: +2439012104873' rel='noreferrer' target='_blank' className=''>
+                        <a href='tel: +2349134942707' rel='noreferrer' target='_blank' className=''>
                             <div className='flex flex-col gap-3 items-center pt-3 text-[20px] font-semibold hover:scale-90 duration-500'>
                                 <FaPhoneVolume className='sv:text-[27px] text-[23.4px]' />
                                 +234 913 494 2707
                             </div>
                         </a>
-                        <a href='mailto:tmbi@mail.ee' rel='noreferrer' target='_blank'>
+                        <a href='mailto:info@thronebusinessinstituteswitzerland.com' rel='noreferrer' target='_blank'>
                             <div className='flex flex-col gap-3 items-center pt-3 text-[20px] font-semibold hover:scale-90 duration-500'>
                                 <MdOutlineEmail className='sv:text-[27px] text-[23.4px]' />
                                 info@thronebusinessinstitute.com

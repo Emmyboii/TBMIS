@@ -20,12 +20,9 @@ const PopUp = () => {
     }
 
     useEffect(() => {
-        if (!localStorage.getItem("seenPopUp")) {
-            setTimeout(() => {
-                setModal(true);
-                localStorage.setItem("seenPopUp", true);
-            }, 5700)
-        }
+        setTimeout(() => {
+            setModal(true);
+        }, 5700)
     }, []);
 
     const [formData, setFormData] = useState({
@@ -40,6 +37,7 @@ const PopUp = () => {
     const [status, setStatus] = useState({ message: '', type: '' });
     const [loading, setLoading] = useState(false); // Loading indicator state
     const [validationErrors, setValidationErrors] = useState({}); // Validation errors
+    const [showModal, setShowModal] = useState(false); // For modal feedback
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -95,7 +93,7 @@ const PopUp = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5001/submit-form', submissionData);
+            const response = await axios.post('https://the-jinja-8611fed5dc90.herokuapp.com/api/v1/submit-form/', submissionData);
             if (response.status === 200) {
                 setStatus({ message: 'Registration Successful!', type: 'success' });
                 // Clear form after successful submission
@@ -107,15 +105,44 @@ const PopUp = () => {
                     highestEducation: '',
                     availableProgrammes: '',
                 });
+                setShowModal(true); // Show modal on success
+                showToast('success', 'Registration Successful!')
+                console.log(response.data);
             } else {
                 setStatus({ message: 'Failed to submit your application. Please try again.', type: 'error' });
+                showToast('error', 'Failed to submit the form.');
             }
         } catch (error) {
             console.error('Error submitting form:', error);
             setStatus({ message: 'Error submitting application. Please try again later.', type: 'error' });
+            showToast('error', 'Error submitting form.')
         } finally {
             setLoading(false); // Hide loading spinner
         }
+    };
+
+    useEffect(() => {
+        setTimeout(() => {
+            setShowModal(false);
+        }, 4300)
+    }, []);
+
+    const modals = () => {
+        setShowModal(false)
+    };
+    // Toast function to show small notifications
+    const showToast = (type, message) => {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerText = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 500);
+        }, 3000);
     };
 
     return modal ? (
@@ -124,10 +151,10 @@ const PopUp = () => {
                 <button onClick={onClose} className='place-self-end cursor-pointer text-white'><FaTimes size={30} /></button>
                 <div className="shadow-md shadow-black/50 grid mp:grid-cols-5">
                     <img src={BG} className='mp:col-span-3 z-30 mp:h-[84vh]' alt="" />
-                    <form onSubmit={handleSubmit} className='shadow-gray-400 mp:col-span-2 shadow-md py-4 bg-white flex flex-col justify-center'>
-                        <div className="mx-5 mb-4">
+                    <form onSubmit={handleSubmit} className='shadow-gray-400 mp:col-span-2 shadow-md mp:py-4 py-2 bg-white flex flex-col justify-center'>
+                        <div className="mx-5 mb-2 mp:mb-4">
                             <input
-                                className='py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] mp:py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="text"
                                 name="firstName"
                                 value={formData.firstName}
@@ -137,9 +164,9 @@ const PopUp = () => {
                             />
                             {validationErrors.firstName && <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.firstName}</p>}
                         </div>
-                        <div className="mx-5 mb-4">
+                        <div className="mx-5 mb-2 mp:mb-4">
                             <input
-                                className='py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] mp:py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="text"
                                 name="lastName"
                                 value={formData.lastName}
@@ -149,9 +176,9 @@ const PopUp = () => {
                             />
                             {validationErrors.lastName && <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.lastName}</p>}
                         </div>
-                        <div className="mx-5 mb-4">
+                        <div className="mx-5 mb-2 mp:mb-4">
                             <input
-                                className='py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] mp:py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="tel"
                                 name="whatsappNumber"
                                 value={formData.whatsappNumber}
@@ -163,9 +190,9 @@ const PopUp = () => {
                                 <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.whatsappNumber}</p>
                             )}
                         </div>
-                        <div className="mx-5 mb-4">
+                        <div className="mx-5 mb-2 mp:mb-4">
                             <input
-                                className='py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] mp:py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="email"
                                 name="email"
                                 value={formData.email}
@@ -175,9 +202,9 @@ const PopUp = () => {
                             />
                             {validationErrors.email && <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.email}</p>}
                         </div>
-                        <div className="mx-5 mb-4">
+                        <div className="mx-5 mb-2 mp:mb-4">
                             <select
-                                className='py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
+                                className='py-[7px] mp:py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
                                 name="highestEducation"
                                 value={formData.highestEducation}
                                 onChange={handleChange}
@@ -192,9 +219,9 @@ const PopUp = () => {
                                 <option className="text-[18px] font-semibold" value="masters">Masters Degree</option>
                             </select>
                         </div>
-                        <div className="mx-5 mb-4">
+                        <div className="mx-5 mb-2 mp:mb-4">
                             <select
-                                className='py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
+                                className='py-[7px] mp:py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
                                 name="availableProgrammes"
                                 value={formData.availableProgrammes}
                                 onChange={handleChange}
@@ -202,72 +229,72 @@ const PopUp = () => {
                             >
                                 <option className="text-[18px]" value="">Available Programme(s)</option>
                                 <optgroup className="text-[22px]" label="Associate Degree's (B.Sc - AD)">
-                                    <option className="text-[18px] font-[500]" value="Social Media Management">
+                                    <option className="text-[18px] font-[500]" value="Social Media Management(B.Sc - AD)">
                                         Social Media Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Customer Service">
+                                    <option className="text-[18px] font-[500]" value="Customer Service(B.Sc - AD)">
                                         Customer Service
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Human Resource Management">
+                                    <option className="text-[18px] font-[500]" value="Human Resource Management(B.Sc - AD)">
                                         Human Resource Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Project Management">
+                                    <option className="text-[18px] font-[500]" value="Project Management(B.Sc - AD)">
                                         Project Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Risk Management">
+                                    <option className="text-[18px] font-[500]" value="Risk Management(B.Sc - AD)">
                                         Risk Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Sales Management">
+                                    <option className="text-[18px] font-[500]" value="Sales Management(B.Sc - AD)">
                                         Sales Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Information Management">
+                                    <option className="text-[18px] font-[500]" value="Information Management(B.Sc - AD)">
                                         Information Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Supply Chain Management">
+                                    <option className="text-[18px] font-[500]" value="Supply Chain Management(B.Sc - AD)">
                                         Supply Chain Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Marketing">
+                                    <option className="text-[18px] font-[500]" value="Marketing(B.Sc - AD)">
                                         Marketing
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Accounting">
+                                    <option className="text-[18px] font-[500]" value="Accounting(B.Sc - AD)">
                                         Accounting
                                     </option>
                                 </optgroup>
                                 <optgroup className="text-[22px]" label="Executive MBA Program">
-                                    <option className="text-[18px] font-[500]" value="Business Management">
+                                    <option className="text-[18px] font-[500]" value="Business Management (MBA)">
                                         Business Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Marketing">
+                                    <option className="text-[18px] font-[500]" value="Marketing (MBA)">
                                         Marketing
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Human Resources">
+                                    <option className="text-[18px] font-[500]" value="Human Resources (MBA)">
                                         Human Resources
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Risk Management">
+                                    <option className="text-[18px] font-[500]" value="Risk Management (MBA)">
                                         Risk Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Supply Chain Management">
+                                    <option className="text-[18px] font-[500]" value="Supply Chain Management (MBA)">
                                         Supply Chain Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Project Management">
+                                    <option className="text-[18px] font-[500]" value="Project Management (MBA)">
                                         Project Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Information Technology">
+                                    <option className="text-[18px] font-[500]" value="Information Technology (MBA)">
                                         Information Technology
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Sales Management">
+                                    <option className="text-[18px] font-[500]" value="Sales Management (MBA)">
                                         Sales Management
                                     </option>
-                                    <option className="text-[18px] font-[500]" value="Accounting">
+                                    <option className="text-[18px] font-[500]" value="Accounting (MBA)">
                                         Accounting
                                     </option>
                                 </optgroup>
                             </select>
                         </div>
-                        <div className="mx-5 mt-2 sw:mt-0">
+                        <div className="mx-5 sw:mt-0">
                             <button
                                 type="submit"
-                                className='py-[10px] w-[100%] rounded-xl font-semibold sw:text-[24px] bg-blue-500 text-white button-transition'
+                                className='py-[7px] mp:py-[10px] w-[100%] rounded-xl font-semibold sw:text-[24px] bg-blue-500 text-white button-transition'
                                 disabled={loading}
                             >
                                 {loading ? (
@@ -279,9 +306,13 @@ const PopUp = () => {
                                 )}
                             </button>
                         </div>
-                        {status.message && (
-                            <div className={`mt-4 sw:text-[20px] font-medium text-center text-white mx-5 rounded-xl py-3 ${status.type === 'error' ? 'bg-red-500' : 'bg-green-500'}`}>
-                                {status.message}
+                        {showModal && (
+                            <div onClick={modals} className="modal">
+                                <div className="modal-content">
+                                    <span className="close" onClick={() => setShowModal(false)}>&times;</span>
+                                    <h2>{status.type === 'success' ? 'Success!' : 'Error!'}</h2>
+                                    <p>{status.message}</p>
+                                </div>
                             </div>
                         )}
                     </form>

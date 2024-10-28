@@ -57,6 +57,7 @@ const Homeindex = () => {
     const [status, setStatus] = useState({ message: '', type: '' });
     const [loading, setLoading] = useState(false); // Loading indicator state
     const [validationErrors, setValidationErrors] = useState({}); // Validation errors
+    const [showModal, setShowModal] = useState(false); // For modal feedback
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -114,7 +115,7 @@ const Homeindex = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:5001/submit-form', submissionData);
+            const response = await axios.post('https://the-jinja-8611fed5dc90.herokuapp.com/api/v1/submit-form/', submissionData);
             if (response.status === 200) {
                 setStatus({ message: 'Registration Successful!', type: 'success' });
                 // Clear form after successful submission
@@ -126,17 +127,46 @@ const Homeindex = () => {
                     highestEducation: '',
                     availableProgrammes: '',
                 });
+                setShowModal(true); // Show modal on success
+                showToast('success', 'Registration Successful!')
+                console.log(response.data);
             } else {
                 setStatus({ message: 'Failed to submit your application. Please try again.', type: 'error' });
+                showToast('error', 'Failed to submit the form.');
             }
         } catch (error) {
             console.error('Error submitting form:', error);
             setStatus({ message: 'Error submitting application. Please try again later.', type: 'error' });
+            showToast('error', 'Error submitting form.')
         } finally {
             setLoading(false); // Hide loading spinner
         }
     };
 
+    useEffect(() => {
+        setTimeout(() => {
+            setShowModal(false);
+        }, 4300)
+    }, []);
+
+    const modal = () => {
+        setShowModal(false)
+    }
+
+    // Toast function to show small notifications
+    const showToast = (type, message) => {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerText = message;
+        document.body.appendChild(toast);
+
+        setTimeout(() => {
+            toast.style.opacity = '0';
+            setTimeout(() => {
+                document.body.removeChild(toast);
+            }, 500);
+        }, 3000);
+    };
 
     return (
         <div className='w-full h-[100%] bg-blue-700 outline-none border-none'>
@@ -254,63 +284,63 @@ const Homeindex = () => {
                                 >
                                     <option className="text-[18px]" value="">Available Programme(s)</option>
                                     <optgroup className="text-[22px]" label="Associate Degree's (B.Sc - AD)">
-                                        <option className="text-[18px] font-[500]" value="Social Media Management">
+                                        <option className="text-[18px] font-[500]" value="Social Media Management(B.Sc - AD)">
                                             Social Media Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Customer Service">
+                                        <option className="text-[18px] font-[500]" value="Customer Service(B.Sc - AD)">
                                             Customer Service
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Human Resource Management">
+                                        <option className="text-[18px] font-[500]" value="Human Resource Management(B.Sc - AD)">
                                             Human Resource Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Project Management">
+                                        <option className="text-[18px] font-[500]" value="Project Management(B.Sc - AD)">
                                             Project Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Risk Management">
+                                        <option className="text-[18px] font-[500]" value="Risk Management(B.Sc - AD)">
                                             Risk Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Sales Management">
+                                        <option className="text-[18px] font-[500]" value="Sales Management(B.Sc - AD)">
                                             Sales Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Information Management">
+                                        <option className="text-[18px] font-[500]" value="Information Management(B.Sc - AD)">
                                             Information Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Supply Chain Management">
+                                        <option className="text-[18px] font-[500]" value="Supply Chain Management(B.Sc - AD)">
                                             Supply Chain Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Marketing">
+                                        <option className="text-[18px] font-[500]" value="Marketing(B.Sc - AD)">
                                             Marketing
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Accounting">
+                                        <option className="text-[18px] font-[500]" value="Accounting(B.Sc - AD)">
                                             Accounting
                                         </option>
                                     </optgroup>
                                     <optgroup className="text-[22px]" label="Executive MBA Program">
-                                        <option className="text-[18px] font-[500]" value="Business Management">
+                                        <option className="text-[18px] font-[500]" value="Business Management (MBA)">
                                             Business Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Marketing">
+                                        <option className="text-[18px] font-[500]" value="Marketing (MBA)">
                                             Marketing
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Human Resources">
+                                        <option className="text-[18px] font-[500]" value="Human Resources (MBA)">
                                             Human Resources
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Risk Management">
+                                        <option className="text-[18px] font-[500]" value="Risk Management (MBA)">
                                             Risk Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Supply Chain Management">
+                                        <option className="text-[18px] font-[500]" value="Supply Chain Management (MBA)">
                                             Supply Chain Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Project Management">
+                                        <option className="text-[18px] font-[500]" value="Project Management (MBA)">
                                             Project Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Information Technology">
+                                        <option className="text-[18px] font-[500]" value="Information Technology (MBA)">
                                             Information Technology
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Sales Management">
+                                        <option className="text-[18px] font-[500]" value="Sales Management (MBA)">
                                             Sales Management
                                         </option>
-                                        <option className="text-[18px] font-[500]" value="Accounting">
+                                        <option className="text-[18px] font-[500]" value="Accounting (MBA)">
                                             Accounting
                                         </option>
                                     </optgroup>
@@ -332,9 +362,13 @@ const Homeindex = () => {
                                 </button>
                             </div>
                         </div>
-                        {status.message && (
-                            <div className={`mt-4 text-[20px] font-medium text-center text-white mx-5 rounded-xl py-3 ${status.type === 'error' ? 'bg-red-500' : 'bg-green-500'}`}>
-                                {status.message}
+                        {showModal && (
+                            <div onClick={modal} className="modal">
+                                <div className="modal-content">
+                                    <span className="close" onClick={() => setShowModal(false)}>&times;</span>
+                                    <h2>{status.type === 'success' ? 'Success!' : 'Error!'}</h2>
+                                    <p>{status.message}</p>
+                                </div>
                             </div>
                         )}
                     </form>
