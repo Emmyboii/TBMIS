@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Apply.css'
 import { FaTimes } from "react-icons/fa";
@@ -8,6 +9,8 @@ const PopUp = () => {
     const [modal, setModal] = useState(false)
 
     const modalRef = useRef();
+
+    const navigate = useNavigate();
 
     const closeModal = (e) => {
         if (modalRef.current === e.target) {
@@ -34,10 +37,8 @@ const PopUp = () => {
         availableProgrammes: '',
     });
 
-    const [status, setStatus] = useState({ message: '', type: '' });
     const [loading, setLoading] = useState(false); // Loading indicator state
     const [validationErrors, setValidationErrors] = useState({}); // Validation errors
-    const [showModal, setShowModal] = useState(false); // For modal feedback
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -95,7 +96,7 @@ const PopUp = () => {
         try {
             const response = await axios.post('https://the-jinja-8611fed5dc90.herokuapp.com/api/v1/submit-form/', submissionData);
             if (response.status === 200) {
-                setStatus({ message: 'Registration Successful!', type: 'success' });
+                // setStatus({ message: 'Registration Successful!', type: 'success' });
                 // Clear form after successful submission
                 setFormData({
                     firstName: '',
@@ -105,45 +106,18 @@ const PopUp = () => {
                     highestEducation: '',
                     availableProgrammes: '',
                 });
-                setShowModal(true); // Show modal on success
-                showToast('success', 'Registration Successful!')
                 console.log(response.data);
             } else {
-                setStatus({ message: 'Failed to submit your application. Please try again.', type: 'error' });
-                showToast('error', 'Failed to submit the form.');
+                console.log(response.data);
             }
         } catch (error) {
             console.error('Error submitting form:', error);
-            setStatus({ message: 'Error submitting application. Please try again later.', type: 'error' });
-            showToast('error', 'Error submitting form.')
         } finally {
             setLoading(false); // Hide loading spinner
         }
+        navigate('/thank_you')
     };
 
-    useEffect(() => {
-        setTimeout(() => {
-            setShowModal(false);
-        }, 4300)
-    }, []);
-
-    const modals = () => {
-        setShowModal(false)
-    };
-    // Toast function to show small notifications
-    const showToast = (type, message) => {
-        const toast = document.createElement('div');
-        toast.className = `toast ${type}`;
-        toast.innerText = message;
-        document.body.appendChild(toast);
-
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            setTimeout(() => {
-                document.body.removeChild(toast);
-            }, 500);
-        }, 3000);
-    };
 
     return modal ? (
         <div ref={modalRef} onClick={closeModal} className='fixed z-50 inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center duration-300'>
@@ -306,15 +280,6 @@ const PopUp = () => {
                                 )}
                             </button>
                         </div>
-                        {showModal && (
-                            <div onClick={modals} className="modal">
-                                <div className="modal-content">
-                                    <span className="close" onClick={() => setShowModal(false)}>&times;</span>
-                                    <h2>{status.type === 'success' ? 'Success!' : 'Error!'}</h2>
-                                    <p>{status.message}</p>
-                                </div>
-                            </div>
-                        )}
                     </form>
                 </div>
             </div >

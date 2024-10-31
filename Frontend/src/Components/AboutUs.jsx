@@ -29,13 +29,11 @@ const AboutUs = () => {
             </h1>
             <div className={prog ? 'flex flex-col-reverse' : 'md:grid md:grid-cols-2 flex flex-col-reverse'}>
                 <div className=''>
-                    <p data-aos="fade-down" data-aos-delay="100" className={prog ? 'hidden' : 'xl:px-[50px] md:pl-[30px] aos-init sm:text-[30px] st:text-[26px] text-[22px] text-center md:text-left mt-0 st:mt-5 lg:mt-1 font-medium'}>
-                        What We Represent
-                    </p>
                     <p className='xl:px-[50px] md:pl-[30px] md:pr-4 lg:text-[21px] sm:text-[18px] text-[18px] mx-6 md:mx-0 mt-4 font-medium leading-6 st:leading-7'>
-                        Throne Management and Business Institute Switzerland is a pioneering Ed-Tech organization, globally accredited for its
-                        rigorous academic programs. We empower students to become leaders and serve their communities through our comprehensive
-                        curriculum that blends management, technology, and social programs.
+                        Throne Management and Business Institute is a Switzerland-based educational institution and pioneering Ed-Tech organization,
+                        accredited by Swiss Education, Carcao Education, and four other global education boards for its rigorous academic programs.
+                        We empower students to become leaders and serve their communities through our comprehensive curriculum that blends
+                        management, technology, and social programs.
                     </p>
                     <p className='xl:px-[50px] md:pl-[30px] md:pr-4 lg:text-[21px] sm:text-[18px] text-[18px] mx-6 md:mx-0 se:pt-8 pt-4 font-medium leading-6 st:leading-7'>
                         Since our arrival in Nigeria in 2018, over 20,000 students have benefited from our tuition scholarships, underscoring our
@@ -52,10 +50,10 @@ const AboutUs = () => {
                             supportive community of parents, well-wishers, and friends.
                         </p>
                         <p className='xl:px-[50px] md:pl-[30px] md:pr-4 lg:text-[21px] sm:text-[18px] text-[18px] pb-9 mx-6 md:mx-0  font-medium leading-6 st:leading-7'>
-                            Our goal is to democratize education by offering affordable, high-quality, and flexible programs that meet the 
-                            diverse needs of learners across Nigeria. We leverage technology to deliver exceptional learning experiences and 
-                            bridge the gap between traditional education and the demands of the modern world. As a leading global provider of 
-                            innovative educational solutions, we strive to create a world where education is accessible to all and knowledge is 
+                            Our goal is to democratize education by offering affordable, high-quality, and flexible programs that meet the
+                            diverse needs of learners across Nigeria. We leverage technology to deliver exceptional learning experiences and
+                            bridge the gap between traditional education and the demands of the modern world. As a leading global provider of
+                            innovative educational solutions, we strive to create a world where education is accessible to all and knowledge is
                             celebrated as a catalyst for positive change.
                         </p>
                     </div>

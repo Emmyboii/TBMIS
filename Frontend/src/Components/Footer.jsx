@@ -18,7 +18,7 @@ const Footer = () => {
                         <a href="https://ng.linkedin.com/company/tmbis-ng-trs" rel='noreferrer' target='_blank' className='underline'>
                             <FaLinkedin />
                         </a>
-                        <a href="https://wa.me/message/ZDO76R45EDU2K1" rel='noreferrer' target='_blank' className='underline'>
+                        <a href="http://surl.li/mumpei" rel='noreferrer' target='_blank' className='underline'>
                             <FaWhatsapp />
                         </a>
                     </div>
@@ -80,7 +80,7 @@ const Footer = () => {
                     <a href="https://ng.linkedin.com/company/tmbis-ng-trs" rel='noreferrer' target='_blank' className='underline'>
                         <FaLinkedin />
                     </a>
-                    <a href="https://wa.me/message/ZDO76R45EDU2K1" rel='noreferrer' target='_blank' className='underline'>
+                    <a href="http://surl.li/mumpei" rel='noreferrer' target='_blank' className='underline'>
                         <FaWhatsapp />
                     </a>
                 </div>

@@ -430,11 +430,8 @@ const Program = () => {
                   </p>
                 </div>
                 <div className='items-center justify-center flex mt-8'>
-                  <a target='_blank' rel='noreferrer' href='https://wa.me/message/ZDO76R45EDU2K1'>
-                    <button className='bg-orange-500 md:block font-bold hidden p-4 rounded-full'>GET STARTED</button>
-                  </a>
-                  <a target='_blank' rel='noreferrer' href='https://wa.me/p/8402945176485276/447979369907'>
-                    <button className='bg-orange-500 font-bold block md:hidden p-4 rounded-full'>GET STARTED</button>
+                  <a target='_blank' rel='noreferrer' href='http://surl.li/mumpei'>
+                    <button className='bg-orange-500 block font-bold p-4 rounded-full'>GET STARTED</button>
                   </a>
                 </div>
               </div>
@@ -520,11 +517,8 @@ const Program = () => {
                   </p>
                 </div>
                 <div className='items-center justify-center flex mt-8'>
-                  <a target='_blank' rel='noreferrer' href='https://wa.me/message/ZDO76R45EDU2K1'>
-                    <button className='bg-orange-500 font-bold md:block hidden text-white p-4 rounded-full'>GET STARTED</button>
-                  </a>
-                  <a target='_blank' rel='noreferrer' href='https://wa.me/p/27493149160299758/447979369907'>
-                    <button className='bg-orange-500 font-bold block md:hidden text-white p-4 rounded-full'>GET STARTED</button>
+                  <a target='_blank' rel='noreferrer' href='http://surl.li/mumpei'>
+                    <button className='bg-orange-500 font-bold block text-white p-4 rounded-full'>GET STARTED</button>
                   </a>
                 </div>
               </div>
@@ -604,11 +598,8 @@ const Program = () => {
                   </p>
                 </div>
                 <div className='items-center justify-center flex mt-8'>
-                  <a target='_blank' rel='noreferrer' href='https://wa.me/message/ZDO76R45EDU2K1'>
-                    <button className='bg-orange-500 font-bold md:block hidden p-4 rounded-full'>GET STARTED</button>
-                  </a>
-                  <a target='_blank' rel='noreferrer' href='https://wa.me/p/8749585015092601/447979369907'>
-                    <button className='bg-orange-500 font-bold block md:hidden p-4 rounded-full'>GET STARTED</button>
+                  <a target='_blank' rel='noreferrer' href='http://surl.li/mumpei'>
+                    <button className='bg-orange-500 font-bold block p-4 rounded-full'>GET STARTED</button>
                   </a>
                 </div>
               </div>
@@ -617,7 +608,7 @@ const Program = () => {
         </div>
 
         <div className='flex flex-col items-center'>
-          <a target='_blank' rel='noreferrer' href="https://wa.me/message/ZDO76R45EDU2K1">
+          <a target='_blank' rel='noreferrer' href="http://surl.li/mumpei">
             <button className='p-4 md:block hidden text-[18px] items-center justify-center mt-6 rounded-[27px] font-medium bg-white'>
               VIEW MORE
             </button>

@@ -33,7 +33,7 @@ const ContactUs = () => {
                                 info@thronebusinessinstituteswitzerland.com
                             </div>
                         </a>
-                        <a href="https://wa.me/message/ZDO76R45EDU2K1" rel='noreferrer' target='_blank'>
+                        <a href="http://surl.li/mumpei" rel='noreferrer' target='_blank'>
                             <div className='hover:scale-95 text-[20px] mr-[220px] bg-white border-2 text-green-400 border-green-500 py-4 px-3 flex items-center gap-3 font-semibold mt-10 duration-500'>
                                 <BsWhatsapp className='text-[35px] text-green-500 ' />
                                 <p>Chat with an Admissions Advisor</p>
@@ -54,7 +54,7 @@ const ContactUs = () => {
                             </div>
                         </a>
                     </div>
-                    <a href="https://wa.me/message/ZDO76R45EDU2K1" rel='noreferrer' target='_blank'>
+                    <a href="http://surl.li/mumpei" rel='noreferrer' target='_blank'>
                         <div className='hover:scale-95 text-[20px] ms:hidden mx-5 bg-white border-2 text-green-400 border-green-500 py-4 px-3 flex flex-col sv:flex-row items-center justify-center sv:gap-3 font-semibold mt-10 duration-500'>
                             <BsWhatsapp className='text-[35px] text-green-500 ' />
                             <p className='text-center'>Chat with an Admissions Advisor</p>

@@ -1,21 +1,22 @@
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
+require('dotenv').config(); 
 
 const app = express();
-const port = 5001;
+const port = process.env.PORT;
 
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://thronebusinessinstituteswitzerland.com', // Replace with your frontend URL
+    origin: process.env.FRONTEND_URL, // Replace with your frontend URL
     methods: 'GET,POST,PUT,DELETE', // Allowed methods
     credentials: true // Allow credentials if needed
 }));
 
 // Proxy route
 app.post('/submit-form', async (req, res) => {
-    const jotFormAPIKey =  'f08aa138e599d22562079cf29cfd5148';
+    const jotFormAPIKey =  process.env.JOTFORM_API_KEY;
     const FORM_ID = '242971674535062';
     const url = `https://api.jotform.com/form/${FORM_ID}/submissions`;
 
@@ -33,5 +34,5 @@ app.post('/submit-form', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Backend server running on https://the-jinja-8611fed5dc90.herokuapp.com/api/v1/submit-form/`);
+    console.log(`Backend server running on ${process.env.BACKEND_URL}`);
 });
