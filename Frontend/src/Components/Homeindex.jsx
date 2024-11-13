@@ -144,13 +144,13 @@ const Homeindex = () => {
         <div className='w-full h-[100%] bg-blue-700 outline-none border-none'>
             <div>
                 <Slider {...settings} >
-                    <img src={Background1} alt='' className='w-full max-h-dvh min-h-[70dvh] object-cover opacity-40' />
-                    <img src={Background2} alt='' className='w-full max-h-dvh min-h-[70dvh] object-cover lg:object-fill opacity-40' />
-                    <img src={Background3} alt='' className='w-full max-h-dvh min-h-[70dvh] object-cover opacity-40' />
+                    <img src={Background1} alt='' className='w-full xl:h-[730px] 2xl:h-screen h-[520px] object-cover opacity-40' />
+                    <img src={Background2} alt='' className='w-full xl:h-[730px] 2xl:h-screen h-[520px] object-cover lg:object-fill opacity-40' />
+                    <img src={Background3} alt='' className='w-full xl:h-[730px] 2xl:h-screen h-[520px] object-cover opacity-40' />
                 </Slider>
             </div>
             <div className='flex'>
-                <div data-aos="fade-down" data-aos-delay="200" className='aos-init absolute top-[32%] flex flex-col justify-center sp:top-[37%] mp:top-[47%] md:top-[37%] mr:top-[35%] ma:top-[50%] mj:top-[35%] mk:top-[50%] mv:top-[32%] mw:top-[45%] lg:top-[38%] 2la:top-[48%] xl:top-[44%] 2lq:top-[50%] left-[4%]'>
+                <div data-aos="fade-down" data-aos-delay="200" className='aos-init absolute top-[217px] flex flex-col justify-center sp:top-[251px] mp:top-[326px] md:top-[250px] mr:top-[238px] ma:top-[340px] mj:top-[238px] mk:top-[340px] mv:top-[217px] mw:top-[306px] lg:top-[258px] 2la:top-[325px] xl:top-[300px] 2lq:top-[340px] left-[4%]'>
                     <h1 className=' lg:text-[60px] md:text-[55px] leading-[56px] sv:text-[49px] text-[48px] se:text-[57px] sp:text-[47px] mv:text-[60px] font-bold text-white'>
                         Accelerate <br className='sp:hidden block' /> Your Future.
                     </h1>
@@ -163,11 +163,11 @@ const Homeindex = () => {
                         </button>
                     </a>
                 </div>
-                <button onClick={() => window.scrollTo(0, 0)} title='Scroll To Top' data-aos="slide-right" data-aos-delay="100" className={fix ? 'aos-init bg-gray-500  p-1 fixed rounded-full hover:bg-gray-600 text-white top-[90%] left-[-2%] z-40 mx-11' : 'hidden'}>
+                <button onClick={() => window.scrollTo(0, 0)} title='Scroll To Top' data-aos="slide-right" data-aos-delay="100" className={fix ? 'aos-init bg-gray-500  p-1 fixed rounded-full hover:bg-gray-600 text-white top-[90%] landscape:top-[85%] left-[-5%] md:left-[-2%] z-40 mx-11' : 'hidden'}>
                     <RiArrowUpWideLine size={40} className='' />
                 </button>
 
-                <a href="http://surl.li/mumpei" rel='noreferrer' target='_blank' title='CHAT WITH AN ADVISOR' className='bg-green-600 hover:scale-95 duration-500 fixed text-white text-center top-[90%] right-[3%] px-3 py-2 rounded-[15px] z-40'>
+                <a href="http://surl.li/mumpei" rel='noreferrer' target='_blank' title='CHAT WITH AN ADVISOR' className='bg-green-600 hover:scale-95 duration-500 fixed text-white text-center top-[90%] landscape:top-[85%] right-[3%] px-3 py-2 rounded-[15px] z-40'>
                     <div className='hover:scale-95 text-[20px] flex items-center justify-center font-semibold duration-500'>
                         <BsWhatsapp className='text-[30px] text-white' />
                     </div>
@@ -199,7 +199,7 @@ const Homeindex = () => {
                                     value={formData.lastName}
                                     onChange={handleChange}
                                     required
-                                    placeholder='Joe'
+                                    placeholder='Doe'
                                 />
                                 {validationErrors.lastName && <p className="text-red-500 text-xl font-medium">{validationErrors.lastName}</p>}
                             </div>

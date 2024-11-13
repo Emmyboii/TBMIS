@@ -15,7 +15,7 @@ const Accreditation = () => {
             <div className='py-[40px] text-center grid lg:grid-cols-3 sm:grid-cols-2'>
                 <div>
                     <div className='flex flex-col items-center justify-center mx-5'>
-                        <img className='border-black border-4 h-[50vh]' src={SWL} alt="" />
+                        <img className='border-black border-4 h-[360px]' src={SWL} alt="" />
                         <div className='mt-[30px]'>
                             <h1 className='text-[30px] font-semibold text-orange-400 font-serif'>Switzerland</h1>
                             <p className='font-serif leading-8 lg:mx-0 md:mx-10'>
@@ -36,12 +36,12 @@ const Accreditation = () => {
                                 (from pre- school to higher education).
                             </p>
                         </div>
-                        <img className='border-black border-4 xl:ml-[55px] h-[50vh]' src={MEC} alt="" />
+                        <img className='border-black border-4 xl:ml-[55px] h-[360px]' src={MEC} alt="" />
                     </div>
                 </div>
 
                 <div className='flex flex-col items-center justify-center mx-5 lg:mt-0 mt-11'>
-                    <img className='border-black border-4 h-[50vh]' src={CAR} alt="" />
+                    <img className='border-black border-4 h-[360px]' src={CAR} alt="" />
                     <div className='mt-[30px]'>
                         <h1 className='text-[30px] font-semibold text-orange-400 font-serif'>Central African Republic</h1>
                         <p className='font-serif leading-8 lg:mx-0 md:mx-10'>
@@ -54,7 +54,7 @@ const Accreditation = () => {
             </div>
             <div className='mr:grid mr:grid-cols-3 items-center px-10 justify-center'>
                 <div className='mr:col-span-1 mr:block mr:justify-start flex items-cente justify-center'>
-                    <img src={COA} alt="" className='w-[40%]' />
+                    <img src={COA} alt="" className='w-[200px]' />
                 </div>
                 <p className='mr:text-[22px] sy:text-[20px] mr:col-span-2 text-center'>
                     All our programs are recognized by the Federal Government of Nigeria with students guaranteed of NYSC certificate afterwards.

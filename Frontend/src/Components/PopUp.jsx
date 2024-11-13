@@ -121,14 +121,14 @@ const PopUp = () => {
 
     return modal ? (
         <div ref={modalRef} onClick={closeModal} className='fixed z-50 inset-0 bg-black bg-opacity-30 backdrop-blur-sm flex justify-center items-center duration-300'>
-            <div className='flex flex-col justify-center xl:w-[70%] mp:w-[80%] w-[65%] h-[50vh]'>
+            <div className='flex flex-col justify-center xl:w-[70%] se:w-[80%] landscape:w-[80%] w-[65%]'>
                 <button onClick={onClose} className='place-self-end cursor-pointer text-white'><FaTimes size={30} /></button>
-                <div className="shadow-md shadow-black/50 grid mp:grid-cols-5">
-                    <img src={BG} className='mp:col-span-3 z-30 mp:h-[84vh]' alt="" />
-                    <form onSubmit={handleSubmit} className='shadow-gray-400 mp:col-span-2 shadow-md mp:py-4 py-2 bg-white flex flex-col justify-center'>
-                        <div className="mx-5 mb-2 mp:mb-4">
+                <div className="shadow-md shadow-black/50 grid se:grid-cols-5">
+                    <img src={BG} className='se:col-span-3 z-30 se:h-[450px] mp:h-[500px] md:h-[640px] landscape:h-[330px] landscape:md:h-[350px] landscape:mm:h-[430px] landscape:xl:h-[526px] w-full' alt="" />
+                    <form onSubmit={handleSubmit} className='shadow-gray-400 se:col-span-2 shadow-md se:py-2 py-2 bg-white flex flex-col justify-center'>
+                        <div className="mx-5 mb-2 landscape:mb-2 landscape:mm:mb-4 se:mb-4">
                             <input
-                                className='py-[7px] mp:py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] landscape:py-[5.2px] se:py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="text"
                                 name="firstName"
                                 value={formData.firstName}
@@ -138,21 +138,21 @@ const PopUp = () => {
                             />
                             {validationErrors.firstName && <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.firstName}</p>}
                         </div>
-                        <div className="mx-5 mb-2 mp:mb-4">
+                        <div className="mx-5 mb-2 landscape:mb-[5.5px] landscape:mm:mb-4 se:mb-4">
                             <input
-                                className='py-[7px] mp:py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] landscape:py-[5.2px] landscape:mm:py-[8px] se:py-[10px] w-full pl-[15px] rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="text"
                                 name="lastName"
                                 value={formData.lastName}
                                 onChange={handleChange}
                                 required
-                                placeholder='Joe'
+                                placeholder='Doe'
                             />
                             {validationErrors.lastName && <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.lastName}</p>}
                         </div>
-                        <div className="mx-5 mb-2 mp:mb-4">
+                        <div className="mx-5 mb-2 landscape:mb-[5.5px] landscape:mm:mb-4 se:mb-4">
                             <input
-                                className='py-[7px] mp:py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] landscape:py-[5.2px] landscape:mm:py-[8px] se:py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="tel"
                                 name="whatsappNumber"
                                 value={formData.whatsappNumber}
@@ -164,9 +164,9 @@ const PopUp = () => {
                                 <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.whatsappNumber}</p>
                             )}
                         </div>
-                        <div className="mx-5 mb-2 mp:mb-4">
+                        <div className="mx-5 mb-2 landscape:mb-[5.5px] landscape:mm:mb-4 se:mb-4">
                             <input
-                                className='py-[7px] mp:py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
+                                className='py-[7px] landscape:py-[5.2px] landscape:mm:py-[8px] se:py-[10px] pl-[15px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none placeholder:text-[17px]'
                                 type="email"
                                 name="email"
                                 value={formData.email}
@@ -176,9 +176,9 @@ const PopUp = () => {
                             />
                             {validationErrors.email && <p className="text-red-500 text-[15.3px] mo:text-[17px] font-normal">{validationErrors.email}</p>}
                         </div>
-                        <div className="mx-5 mb-2 mp:mb-4">
+                        <div className="mx-5 mb-2 landscape:mb-[5.5px] landscape:mm:mb-4 se:mb-4">
                             <select
-                                className='py-[7px] mp:py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
+                                className='py-[7px] landscape:py-[5.2px] landscape:mm:py-[8px] se:py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
                                 name="highestEducation"
                                 value={formData.highestEducation}
                                 onChange={handleChange}
@@ -193,9 +193,9 @@ const PopUp = () => {
                                 <option className="text-[18px] font-semibold" value="masters">Masters Degree</option>
                             </select>
                         </div>
-                        <div className="mx-5 mb-2 mp:mb-4">
+                        <div className="mx-5 mb-2 landscape:mb-[5.5px] landscape:mm:mb-4 se:mb-4">
                             <select
-                                className='py-[7px] mp:py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
+                                className='py-[7px] landscape:py-[5.2px] landscape:mm:py-[8px] se:py-[10px] pl-[15px] pr-[30px] text-[18px] w-full rounded-lg bg-transparent border-black border-[1px] focus:border-orange-400 focus:shadow focus:shadow-orange-400 focus:border-2 outline-none'
                                 name="availableProgrammes"
                                 value={formData.availableProgrammes}
                                 onChange={handleChange}
@@ -268,7 +268,7 @@ const PopUp = () => {
                         <div className="mx-5 sw:mt-0">
                             <button
                                 type="submit"
-                                className='py-[7px] mp:py-[10px] w-[100%] rounded-xl font-semibold sw:text-[24px] bg-blue-500 text-white button-transition'
+                                className='py-[7px] landscape:py-[6px] landscape:mm:py-[8px] se:py-[10px] w-[100%] rounded-xl font-semibold sw:text-[24px] bg-blue-500 text-white button-transition'
                                 disabled={loading}
                             >
                                 {loading ? (

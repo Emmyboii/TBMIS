@@ -78,14 +78,14 @@ const Program = () => {
         </div>
         <img className='w-[50%] hidden mo:block scale-y-[1.05] mo:scale-y-100 outline-none border-none' src={Back} alt="" />
       </div>
-      <img className='w-full h-[40vh] mp:h-[60vh] object- mo:hidden block mo:scale-y-100 outline-none border-none' src={Back2} alt="" />
+      <img className='w-full h-[350px] mo:hidden block outline-none border-none' src={Back2} alt="" />
       <div className='bg-blue-900 py-[60px]'>
         <div>
           <h1 data-aos="zoom-in" data-aos-delay="100" className='aos-init text-center text-white font-extrabold sa:text-[39px] st:text-[37.5px] text-[34.7px] md:text-[50px]'>OUR PROGRAMS:</h1>
         </div>
 
         <div id='ABD' className='md:mx-[19%] sv:mx-[15%] mx-[12%] hover:scale-105 duration-500 text-white bg-blue-900 my-[90px] text-[17.5px] ma:text-[19px]'>
-          <img src={ABD} alt="" className='h-[40vh] w-full object-cover' />
+          <img src={ABD} alt="" className='h-[250px] w-full object-cover' />
           <div className='shadow-2xl shadow-black/60 mp:px-[40px] sb:px-[20px] px-[10px] pt-[20px] p-[30px]'>
             <h1 className=' text-center text-[22px] sb:text-[24px] se:text-[28px] sy:text-[34px] ma:text-[40px] text-orange-500 font-bold'>
               Ass. Bachelor's Degree
@@ -217,7 +217,7 @@ const Program = () => {
         </div>
 
         <div id='MBA' className='md:mx-[19%] sv:mx-[15%] mx-[12%] hover:scale-105 duration-500 text-white bg-blue-900 text-[17.5px] my-[102px] ma:text-[19px]'>
-          <img src={MBA} alt="" className='h-[40vh] w-full object-cover' />
+          <img src={MBA} alt="" className='h-[250px] w-full object-cover lg:object-fill' />
           <div className='shadow-2xl shadow-black/60 mp:px-[40px] sb:px-[20px] pt-[20px] px-[10px] pb-[30px]'>
             <h1 className='text-[22px] text-center sb:text-[24px] se:text-[28px] sy:text-[34px] ma:text-[40px] text-[#ff9633] font-bold'>
               Executive MBA Program
@@ -251,7 +251,7 @@ const Program = () => {
                 Our 1-Year MBA program offers a rigorous yet flexible learning experience that will help
                 you achieve your career aspirations.
               </p>
-              <p className='pt-5 text-[16px] font-bold'>OUR MBA CONCENTRATIONS INCLUDE:</p>
+              <p className='pt-5 text-[16px] font-bold'>WE HAVE OVER 400 EXECUTIVE MBA PROGRAM, OUR TOP MBA PROGRAMS INCLUDE:</p>
 
               <ul className='pt-3'>
                 <li className='flex items-center gap-2 pt-4'><MdOutlineKeyboardDoubleArrowRight className='text-orange-400 text-[30px]' />
@@ -351,7 +351,7 @@ const Program = () => {
         </div>
 
         <div className='md:mx-[20%] sa:mx-[12.5%] sv:mx-[15%] mx-[10%] hover:scale-105 duration-500 text-white bg-blue-900 text-[17.5px] my-[70px] ma:text-[19px]'>
-          <img src={EDP} alt="" className='h-[40vh] w-full object-cover' />
+          <img src={EDP} alt="" className='h-[250px] w-full object-cover' />
           <div className='shadow-2xl shadow-black/60 mp:px-[40px] sb:px-[20px] pt-[20px] px-[10px] pb-[30px]'>
             <div>
               <h1 className='text-[22px] text-center sb:text-[24px] se:text-[28px] sy:text-[34px] ma:text-[40px] text-orange-500 font-bold'>
@@ -440,7 +440,7 @@ const Program = () => {
         </div>
 
         <div className='md:mx-[20%] sv:mx-[15%] mx-[13%] hover:scale-105 duration-500 text-white bg-blue-900 text-[17.5px] my-[70px] ma:text-[19px]'>
-          <img src={PC} alt="" className='h-[40vh] w-full object-cover' />
+          <img src={PC} alt="" className='h-[250px] w-full object-cover' />
           <div className='shadow-2xl shadow-black/60 mp:px-[40px] sb:px-[20px] px-[10px] pt-[20px] pb-[30px]'>
             <div>
               <h1 className='text-[22px] text-center sb:text-[24px] se:text-[28px] sy:text-[34px] ma:text-[40px] text-orange-500 font-bold'>
@@ -527,7 +527,7 @@ const Program = () => {
         </div>
 
         <div className='md:mx-[20%] sv:mx-[15%] mx-[12%] hover:scale-105 duration-500 text-white bg-blue-900 text-[17.5px] my-[70px] ma:text-[19px]'>
-          <img src={MBA} alt="" className='h-[40vh] w-full object-cover' />
+          <img src={MBA} alt="" className='h-[250px] w-full object-cover lg:object-fill' />
           <div className='shadow-2xl shadow-black/60 mp:px-[40px] sb:px-[20px] px-[10px] pt-[20px] pb-[30px]'>
             <div>
               <h1 className='text-[22px] text-center sb:text-[24px] se:text-[28px] sy:text-[34px] ma:text-[40px] text-orange-500 font-bold'>

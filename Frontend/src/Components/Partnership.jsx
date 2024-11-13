@@ -8,7 +8,7 @@ import WEST from '../Images/weuclogo2.png';
 const Partnership = () => {
     return (
         <div className='py-5 px-6'>
-            <p className='text-center font-bold text-[50px] mp:text-[37px] text-orange-400'>PARTNERSHIPS</p>
+            <p className='text-center font-bold text-[40px] mp:text-[37px] text-orange-400'>PARTNERSHIPS</p>
             <p className='text-center mp:text-[25px] text-[21.5px] font-serif ma:mx-10 mp:mx-7 mt-4 font-medium'>
                 We've partnered with leading African universities to ensure your learning is not only globally relevant but deeply rooted in
                 local contexts. This collaboration allows us to offer a comprehensive and culturally-sensitive learning experience.

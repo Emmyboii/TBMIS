@@ -5,16 +5,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      // animation: {
-      //   fade: 'fade 1.5s'
-      // },
-      // keyframes: {
-      //   fade: {
-      //     from: { opacity: .4 },
-      //     to: { opacity: 1 },
-      //   },
-      // },
-
       screens: {
         '2lq': '1365px',
         '2ll': '1500px',

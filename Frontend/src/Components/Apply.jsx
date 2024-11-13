@@ -129,7 +129,7 @@ const Apply = () => {
                                 value={formData.lastName}
                                 onChange={handleChange}
                                 required
-                                placeholder='Joe'
+                                placeholder='Doe'
                             />
                             {validationErrors.lastName && <p className="text-red-500 text-xl font-medium">{validationErrors.lastName}</p>}
                         </div>
