@@ -56,10 +56,10 @@ const PopUp = () => {
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         let errors = {};
 
-        if (!formData.firstName) {
+        if (formData.firstName === "") {
             errors.firstName = 'Full name is required.';
         }
-        if (!formData.lastName) {
+        if (formData.lastName === "") {
             errors.lastName = 'Last name is required.';
         }
         if (!phoneNumberRegex.test(formData.whatsappNumber)) {
